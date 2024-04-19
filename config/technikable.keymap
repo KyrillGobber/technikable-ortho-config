@@ -23,7 +23,7 @@
 
 / {
     chosen {
-       zmk,matrix_transform = &dual_2u_transform;
+       zmk,matrix_transform = &ortho_transform;
     };
 
     behaviors {
