@@ -16,7 +16,7 @@
 #define RAISE 3
 #define OSL   4
 #define GAME  5
-#define PAD   6
+#define RAISE_MAC 6
 #define HYP_MAC LC(LA(LGUI))
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
@@ -42,7 +42,8 @@
             label = "ALTD";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp LALT>, <&kp RALT>, <&tog PAD>;
+            bindings = <&kp LALT>, <&kp RALT>;
+            //bindings = <&kp LALT>, <&kp RALT>, <&kp PAD>;
         };
     };
 
@@ -71,7 +72,7 @@
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
     &kp LSHFT    &kp CH_Y     &kp X        &kp C        &kp V        &kp B      &kp N       &kp M        &kp CH_COMM &kp CH_DOT &kp CH_MINS  &kp RSHIFT
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-                              &kp LGUI     &kp HYP_MAC  &mo LOWER    &kp RET    &kp SPACE  &mo_sl RAISE OSL &td0 &kp RALT
+                              &kp LGUI     &kp HYP_MAC  &mo LOWER    &kp RET    &kp SPACE  &mo_sl RAISE_MAC OSL &td0 &kp RALT
 //,--------------------------+------------+------------+------------+----------+-----------+------------+----------+-----------------------------------.
             >;
         };
@@ -111,12 +112,12 @@
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
     &none        &none        &none        &none        &none        &none      &none      &none         &none      &none       &kp CH_DLR   &kp CH_TILD
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-                          	  &none        &none        &none        &none      &none       &none        &tog MAC      &none
+                          	  &none        &none        &none        &none      &none      &tog MAC      &tog MAC      &none
 //,--------------------------+------------+------------+------------+----------+-----------+------------+----------+-----------------------------------.
             >;
         };
         GAME {
-                        bindings = <
+            bindings = <
 //,---------------------------------------------------------------------------------------------------------------------------------------------------------.
     &kp TAB      &kp N2       &kp Q        &kp W        &kp E        &kp R      &kp N5      &kp N6       &kp N7     &kp N8      &kp N9       &kp N0
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
@@ -129,16 +130,16 @@
                         >;
                 };
 
-        pad_layer {
+        raise_layer_mac {
             bindings = <
 //,---------------------------------------------------------------------------------------------------------------------------------------------------------.
-    &none        &none        &none        &none        &none        &none      &kp KP_MULTIPLY  &kp N7  &kp N8     &kp N9       &kp PLUS   &kp BSPC
+    &kp TILDE    &kp CH_BSLS  &kp CH_SLSH  &kp CH_LPRN  &kp CH_RPRN  &none      &kp PG_UP    &kp HOME     &kp UP      &kp END    &kp CH_UDIA  &kp DEL
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-    &none        &none        &none        &none        &none        &none      &kp KP_DIVIDE  &kp N4    &kp N5     &kp N6       &kp MINUS  &none
+    &kp LCTRL    &kp CH_AT    &kp CH_HASH  &kp MAC_LCBR  &kp MAC_RCBR  &none      &kp PG_DN    &kp LEFT     &kp DOWN    &kp RIGHT  &kp CH_QUES  &kp CH_EXLM
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-    &none        &none        &none        &none        &none        &none      &none      &kp N1        &kp N2     &kp N3       &none      &none
+    &kp LSHFT    &kp CH_LABK  &kp CH_RABK  &kp MAC_LBRC  &kp MAC_RBRC  &none      &none       &none        &none      &kp CH_GRV  &kp CH_DLR   &none
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-                          	  &none        &none        &none        &none      &kp KP_ENTER &kp N0      &tog PAD   &none
+                          	  &none        &kp LGUI     &kp LALT     &none      &none       &none        &none      &none
 //,--------------------------+------------+------------+------------+----------+-----------+------------+----------+-----------------------------------.
             >;
         };
