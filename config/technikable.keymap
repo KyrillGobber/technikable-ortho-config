@@ -30,7 +30,6 @@
     behaviors {
         mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
-            label = "mo_sl";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
@@ -38,18 +37,10 @@
         };
         td0: td_alt_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "ALTD";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&kp LALT>, <&kp RALT>;
             //bindings = <&kp LALT>, <&kp RALT>, <&kp PAD>;
-        };
-        hyper_key: hyper_key {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HYPER";
-            #binding-cells = <0>;
-            bindings = <&mt MOD_LCTL MOD_LGUI MOD_LALT>, <&kp>;
-            tapping-term = <150>;
         };
     };
 
@@ -78,7 +69,7 @@
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
     &kp LSHFT    &kp CH_Y     &kp X        &kp C        &kp V        &kp B      &kp N       &kp M        &kp CH_COMM &kp CH_DOT &kp CH_MINS  &kp RSHIFT
 //|-------------+------------+------------+------------+------------+----------+-----------+------------+----------+-----------+------------+----------|
-                              &kp cmd     &kp HYP_MAC   &mo LOWER    &kp RET    &kp SPACE  &mo_sl MC_RAISE OSL &kp LGUI
+                              &kp LGUI     &kp HYP_MAC   &mo LOWER    &kp RET    &kp SPACE  &mo_sl MC_RAISE OSL &kp RALT
 //,--------------------------+------------+------------+------------+----------+-----------+------------+----------+-----------------------------------.
             >;
         };
@@ -95,7 +86,6 @@
 //,--------------------------+------------+------------+------------+----------+-----------+------------+----------+-----------------------------------.
             >;
         };
-        
         raise_layer {
             bindings = <
 //,---------------------------------------------------------------------------------------------------------------------------------------------------------.
