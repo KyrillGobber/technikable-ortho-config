@@ -162,7 +162,9 @@
 #define CH_BSLS RA(CH_LABK) // (backslash)
 
 
-#define MAC_LBRC RA(CH_5)
-#define MAC_RBRC RA(CH_6)
-#define MAC_LCBR RA(CH_8)
-#define MAC_RCBR RA(CH_9)
+// Mac stuff
+#define MC_LCBR RA(CH_8)    // {
+#define MC_RCBR RA(CH_9)    // }
+#define MC_LBRC RA(CH_5)    // [
+#define MC_RBRC RA(CH_6)    // ]
+#define MC_AT RA(CH_G)      // @
